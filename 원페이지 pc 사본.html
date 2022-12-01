@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>연서회</title>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Gugi&family=Yeon+Sung&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+        <!--
+        font-family: 'East Sea Dokdo', cursive;
+        font-family: 'Gugi', cursive;
+        font-family: 'Yeon Sung', cursive;
+        font-family: 'Zhi Mang Xing', cursive;
+        -->
+        <style>
+            *{margin:0;padding:0}
+            body, html{margin:0; background-color: rgb(255,255,240);}
+            ul, ol{list-style:none}
+            p{font-family: 'East Sea Dokdo', cursive; font-size: 40px;}
+            h1{font-family: 'Yeon Sung', cursive; font-size: 50px;}
+
+            .header{position:fixed;z-index:15;top:0;width:100%; background-color: rgb(255,255,255);}
+            .header ul:after{content:"";display:block;clear:both}
+            .header .title{float:left;margin:0;width:50%;height:60px;background-color: rgb(255,255,255);}
+            .header .title h1{display:block; margin:0 0 0 10px; font-family: 'Zhi Mang Xing', cursive;font-size:60px; padding-left: 10px; line-height:60px;}
+            .header .nav{float:left;width:45%;height:60px;}
+            .header ul li.n{float:left;border-left:1px solid white;box-sizing:border-box;width:25%}
+            .header ul li.n:first-child{border-left:none}
+            .header ul li.n a{display:block;height:60px;text-align:center;line-height:60px;font-family: 'Gugi', cursive; font-size:30px;text-decoration:none;color:rgba(20,20,20,0.7)}
+            .header ul li.n a:hover{font-weight: bold;color:black;}
+
+            .content div{position:relative;}
+
+            .line{margin:0 auto; width:90%; height: auto; background:url(../작품/갈필.png) center; background-size:cover;}
+
+            .content .cnt01{position:relative; height:1000px; background:linear-gradient(rgb(217,217,217) 80%, rgb(255,255,240))}
+            .content .cnt01 .titleImage{width:100%; height:auto; background-image:url(""); background-size:cover;}
+            .content .cnt01 .titleImage img{width: 100%; height: 100%;}
+            /*.content .cnt01 .container1{position:absolute; left:5%;display:grid; width:90%; height: 50%; grid-template-columns:1fr; gap: 30px; text-align: center;}
+            .content .cnt01 .container1 .item1{display:inline-block; grid-row:1/3}
+            .content .cnt01 section#title{display:inline-block; margin:0; width:40%; height:80%; background-color: skyblue;}
+            .content .cnt01 div section.sub{float: left; margin:2% 0 0 0; width: 40%; height:20%; background-color: aliceblue;}*/
+
+            .content .cnt02{height:1000px; text-align: center;}
+            .content .container2{position:absolute;top:20%;left:10%;width:80%;height:800px;}
+            /*.content .container2 .chCalli{display: grid;}
+            .content .container2 .stamp{display: grid;}
+            .content .container2 .Calli{display: grid;}*/
+            .content .container2 .imgContainer{margin:0 auto; display:grid;width:100%;height:300px;background-color:beige;border-radius:2em;grid-template-columns:1fr 1fr 1fr;place-items:center;gap:20px;}
+            .content .container2 .imgContainer .circle{display:grid; width:80%; height:auto;background-color: gainsboro;border-radius:70%;overflow:hidden;}
+            .content .container2 .imgContainer .circle .profile{width:100%;height:100%;object-fit:cover;}
+            .content .container2 .imgContainer .circle .profile:hover{opacity:0.5;}
+            .content .container2 .expContainer div.cntExp{font-family: 'Yeon Sung', cursive; text-align: center; font-size: 30px; border:solid 2px black;}
+            .content .container2 .imgBox1{background-image: url("../작품/서예.jpg"); background-size: cover;}
+            
+            
+
+            .content .cnt03{height: 5000px;}
+            .content .cnt03 .titleImage{z-index:10; width:100%; height:auto; background:url("../작품/1학기전시회액자.jpg") no-repeat center; background-size: cover;}
+            .content .cnt03 .container3{position:absolute; display:grid; left:5%; top:600px; width:90%; height:2000px; grid-template-columns:1fr 1fr 1fr; gap:30px; background-color: white;}
+            .content .cnt03 .container3 .images{margin-top: 10%;;}
+            .content .cnt03 .container3 .imageFlex1{display:grid; row-gap:20px; margin-left: 10%;}
+            .content .cnt03 .container3 .imageFlex2{display:grid; row-gap:20px;}
+            .content .cnt03 .container3 .imageFlex3{display:grid; row-gap:20px; margin-right: 10%;}
+            .content .cnt03 .container3 .images img{width:100%; object-fit: cover;}
+
+            .content .cnt04{display:block; width:100%; height: 3000px;}
+        </style>
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <div class="header", id="bar">
+            <div class="title"><h1>硏書會</h1></div>
+            <div class="nav">
+                <ul>
+                <li class="n" class="n_bar"><a href="#">연서회</a></li>
+                <li class="n" class="n_bar"><a href="#">활동</a></li>
+                <li class="n" class="n_bar"><a href="#">전시회</a></li>
+                <li class="n" class="n_bar"><a href="#">작품</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cnt01">
+                <div class="titleImage"><img src="../작품/title.png"></div>
+                <div class="container1">
+                </div>
+            </div>
+            <div class="cnt02">
+                <div class="line"></div>
+                <div class="container2">
+                    <div class="imgContainer">
+                        <div class="circle"><img class="profile" src="../작품/캘리.jpg"></div>
+                        <div class="circle"><img class="profile" src="../작품/서예.jpg"></div>
+                        <div class="circle"><img class="profile" src="../작품/도장.jpg"></div>
+                    </div>
+                    <div class="expContainer">
+                        <div class="e" class="calli">
+                            <div class="imgBox"></div>
+                            <div class="cntExp">연서회 캘리에 대한 설명입니다.</div>
+                        </div>
+                        <div class="e" class="chCalli">
+                            <div class="imgBox"></div>
+                            <div class="cntExp">연서회 서예에 대한 설명입니다.</div>
+                        </div>
+                        <div class="e" class="stamp">
+                            <div class="imgBox"></div>
+                            <div class="cntExp">연서회 도장파기에 대한 설명입니다.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cnt03">
+                <div class="titleImage"></div>
+                <div class="container3">
+                    <div class="images">
+                        <div class="imageFlex1">
+                          <img src="../작품/1.jpg">
+                          <img src="../작품/2.jpg">
+                          <img src="../작품/3.jpg">
+                          <img src="../작품/4.jpg">
+                          <img src="../작품/5.jpg">
+                          <img src="../작품/6.jpg">
+                          <img src="../작품/17.jpg">
+                        </div>
+                    </div>
+                    <div class="images">
+                        <div class="imageFlex2">
+                          <img src="../작품/7.jpg">
+                          <img src="../작품/8.jpg">
+                          <img src="../작품/9.jpg">
+                          <img src="../작품/10.jpg">
+                          <img src="../작품/11.jpg">
+                          <img src="../작품/18.jpg">
+                          <img src="../작품/20.jpg">
+                        </div>
+                    </div>
+                    <div class="images">
+                        <div class="imageFlex3">
+                          <img src="../작품/12.jpg">
+                          <img src="../작품/13.jpg">
+                          <img src="../작품/14.jpg">
+                          <img src="../작품/15.jpg">
+                          <img src="../작품/16.jpg">
+                          <img src="../작품/19.jpg">
+                          <img src="../작품/21.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cnt04" style="height:3000px">
+                <div class="line"></div>
+                <div>
+                    <h1>드뎌 ㅊ찾음!</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            var scroll = function(){
+                var $nav=null, $cnt=null, $cnt2title=null, $img=null, $frame=null, $line=null, $circle=null, $expC=null;
+                whp=0,
+                moveCnt = null,
+                moveIndex = 0,
+                moveCntTop = 0,
+                winH = 0,
+                time = false, // 새로 만든 변수
+                startDisplay = 1,
+                navDisplay = 1;
+                DisplayExp=0;
+
+
+                $(document).ready(function(){ // 문서가 load 되면 실행
+                    init();
+                    initEvent();
+                });
+                var init = function(){      // 변수설정
+                    $cnt = $(".content");
+                    $nav = $(".header a");
+                    $cnt2title = $(".content .cnt03 .titleImage");
+                    $img = $(".container3 .imageFlex2 img:last-child");
+                    $frame = $(".cnt03 .container3");
+                    $line = $(".line");
+                    $circle = $(".content .container2 .imgContainer .circle");
+                };
+                var initEvent = function(){
+                    size()
+                    $(window).resize(function(){
+                        size();    
+                    })
+                    $nav.on("click", function(){
+                        if(navDisplay==1){
+                            navDisplay=0;  //nav display 투명
+                            $(".header").fadeOut('slow');
+                            startDisplay=0;
+                        }
+                        moveIndex = $(this).parent("li").index();
+                        moving(moveIndex);
+                    });
+                    $circle.hover(function(e){
+                        imgIndex = $(this).index();
+                        $(".container2").css({backgroundColor:black});
+                        DisplayExp = $(".container2").children("div").eq(imgIndex);
+                        
+                    });
+                    $(document).mousemove(function(e){  //마우스 위치에 따라 nav
+                        
+                        if(time === false){
+                            if(e.clientY<60){
+                                navDisplay=1;
+                                $(".header").fadeIn("slow");
+                            }
+                            /*else if (startDisplay==0){  //마우스가 멀어지면 fadeout
+                                navDisplay=0;
+                                $(".header").fadeOut(1500); //fadeout 먹이 사라지는듯이 효과 만들기
+                            }*/
+                        }
+                    })
+
+                    $cnt.on("mousewheel", function(e){
+                        /*whp = $(window).scrollTop();
+                        winH = $(window).height();
+                        indexH = $cnt.children("div").eq(moveIndex).offset().top;*/
+                        if(navDisplay==1){
+                            navDisplay=0;  //nav display 투명
+                            $(".header").fadeOut('slow');
+                        }
+                        /*if (moveIndex < 3){
+                            if(whp>$cnt.children("div").eq(moveIndex+1).offset().top-winH){
+                                if(time === false){ // time 변수가 펄스일때만 휠 이벤트 실행
+                                    wheel(e);
+                                }
+                            }
+                        }if(moveIndex > 0){
+                            if(whp<$cnt.children("div").eq(moveIndex).offset().top){
+                                if(time === false){ // time 변수가 펄스일때만 휠 이벤트 실행
+                                    wheel(e);
+                                }
+                            }
+                        }*/
+                        
+                    });
+                };
+                var wheel = function(e){
+                    if(e.originalEvent.wheelDelta < 0){
+                        if(moveIndex < 3){
+                            moveIndex += 1;
+                            moving(moveIndex);
+                        };
+                    }else{
+                        if(moveIndex > 0){
+                            moveIndex -= 1;
+                            moving(moveIndex);
+                        };
+                    };
+                };
+                var moving = function(index){
+                    time = true // 휠 이벤트가 실행 동시에 true로 변경
+                    moveCnt = $cnt.children("div").eq(index); //eq : 선택한 요소의 index를 찾아 그 index 값을 반환한다
+                    moveCntTop = moveCnt.offset().top; //offset 선택한 요소의 좌표를 저장한다.
+                    $("html ,body").stop().animate({
+                        scrollTop: moveCntTop
+                    }, 1000, function(){
+                    time = false; // 휠 이벤트가 끝나면 false로 변경
+                    });
+                };
+
+                var size = function(){ // cnt2에 타이틀 이미지 크기 조정
+                    $cnt2title.height($cnt2title.width()*33/40);
+                    $line.height($line.width()*0.077);
+                    frameSize = $img.offset().top - $frame.offset().top + $img.height()*1.5;
+                    $frame.css({top:$cnt2title.height(), height:frameSize});
+                    $(".content .cnt03").height(frameSize+$cnt2title.height()+500);
+                    $(".circle").height($(".circle").width());
+                    $(".imgContainer").height($(".circle").width()*1.5);
+                    $(".cnt01 .titleImage").height($(".cnt01 .titleImage").width()*1080/1920);
+                    $(".cnt01").height($(".cnt01 .titleImage").height()*1.3);
+                }
+            };
+
+            scroll();
+
+        </script>
+    </body>
+</html>

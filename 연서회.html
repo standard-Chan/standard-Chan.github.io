@@ -13,9 +13,66 @@
         -->
         <title>연서회</title>
         <style>
-            .menuOpen{position:fixed;z-index:5;top:5%;right:50px;width:100px;height:100px; background: url("./image/먹물효과.png"); background-size: cover;}
+            @media all and (max-width:1024px){
+            .menuOpen{position:fixed;z-index:5;top:5%;right:20px;width:100px;height:100px; background: url("./image/먹물효과.png"); background-size: cover;}
             .menuOpen a:hover{color:white; cursor:pointer;}
-            .header{position:fixed; z-index:3;top:0;right:0;width:200px;height:100vh;}
+            .header{position:fixed; z-index:3;top:0;right:0;width:170px;height:100vh;}
+            .header .nav{position: absolute; top:20%; width:100%;}
+            .header .menu:hover{opacity: 1; background-color: rgb(35,35,35); border-radius: 1rem;}
+            .header ul li.n{width:100px; z-index: 3;height:100px; position:relative; left:50px; background:url("./image/먹물효과.png"); background-size:100px 100px ;margin-bottom:10px;}
+            .header ul li.n a:hover{font-weight: bold;color:white;}
+
+            .title {height:200vh;}
+            .title .content {position: fixed; height: 100vh; width: 100%;}
+            .title .background{content:""; display:none; position:absolute;top:0px;left:0px;right:0px;bottom:0px; background: url(./image/main.jpg);background-size: cover; background-attachment: fixed;}
+            .title .name{display:none; width:500px; height: 400px; position:absolute; top:25%;left:50%; transform: translateX(-50%) translateY(-50%);background-image: url(./image/먹번짐.png); background-size:500px 400px; text-align:center;}
+            .title .name h1{max-width: 60%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%; font-family: 'Gugi', cursive; font-size: 4rem; text-align: center; color:white;}
+            .title .sub{display:none; width:300px; height: 230px; position:absolute; top:65%; left:45%; transform: translateY(-50%); font-size: 1rem;}
+            .title .sub .img{position:absolute; width:80px; height:70px; right: 0px; background-image: url("./image/먹물효과.png"); background-size: 80px 70px; font-family: 'Gugi', cursive; text-align: center; line-height: 65px; color:white}
+            .title .sub .text{position:absolute; left:30px; font-size: 2rem; font-family: 'East Sea Dokdo', cursive; color:white; background-color: black;}
+
+            .scene {display:block; position:relative; height:600vh; overflow: hidden; background-attachment: fixed;}
+            
+            .scene.one .content{position: absolute; height: 100vh; width: 100%;}
+            .scene.one .background{content:"";position:absolute; top:0px;left:0px;right:0px;bottom:0px; background:url("./image/main.jpg"); background-size:cover; background-attachment: fixed;}
+            
+            .scene .posPoint{position: absolute; display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; top: 50%; left:5%; column-gap: 2%; row-gap: 1%;width:90%; height: 40%;}
+            .scene .posPoint div{position:relative; width:100%; height:100px; background-color: rgba(36,57,62,0.8);}
+            .scene .posPoint div img{position:absolute; left:50%; top:50%; transform: translateX(-50%) translateY(-50%); width:90%; height:90%;}
+
+            .scene.two .background{content:"";position:absolute;top:0px;left:0px;right:0px;bottom:0px; background:url("./image/main.jpg"); background-size:cover;background-attachment: fixed;}
+            .scene.two .content{display:none; position:absolute; height: 100vh; width: 100%;}
+
+            .scene.three .content{position: absolute; top:0px; left:0px; height: 100vh; width: 100%;}
+            .scene.three .background{content:""; position: absolute; top: 0px; left :0px;right:0px;bottom:0px;background:url("./image/배경3m.jpg");background-size:cover; background-attachment: fixed;opacity: 1;}
+            .scene.three .scrollImg{position: absolute; top: 60%; width:6000px; height:900px; transform:translateY(-50%); background-color: rgba(255,255,255,0.5);opacity: 0;}
+            .scene.three .scrollImg img{position:absolute; height:850px;}
+
+            .scene.four .content{position: absolute; top:0px; left:0px; height: 100vh; width: 100%;}
+            .scene.four .background{content:"";position:absolute;top:0px;left:0px;right:0px;bottom:0px;background:url("./image/배경4m.jpg");background-size: cover; background-attachment: fixed;opacity: 1;}
+            .scene.four .scrollImg{position: absolute; top: 60%; width:6000px; height:900px; transform:translateY(-50%); background-color: rgba(255,255,255,0.5); opacity: 0;}
+            .scene.four .scrollImg img{position:absolute; height:850px;}
+
+            .scrollImg .slide{position:absolute; top:25px; left:0; width:99vw; height:400px;}
+            .scrollImg .slide .left{position: absolute; top:0; left:0; height: 850px; width: 50px; background-color: rgb(50,50,50); opacity: 0.5; z-index: 1;}
+            .scrollImg .slide .right{position: absolute; top:0; right:0; height: 850px; width: 50px; background-color: rgb(50,50,50); opacity: 0.5;}
+            .scrollImg .slide .arrow{position:absolute; width:40px; height:50px; top:50%; right:5px; transform:translateY(-50%); background:url("./image/화살표.png"); background-size: 40px 50px;}
+            .scrollImg .slide .left .arrow{transform: translateY(-50%) scaleX(-1); left:5px;}
+            .scrollImg .slide div:hover{opacity: 1;}
+
+            .content .subName{width:350px; height: 100px; position:absolute; top:10%;left:50%; transform: translateY(-50%);transform: translateX(-50%);background-image: url(./image/갈필1.png); background-size:350px 100px; text-align:center; opacity:0;}
+            .content .name2{width:400px; height: 300px; position:absolute; top:20%;left:50%; transform: translateY(-50%);transform: translateX(-50%);background-image: url(./image/먹번짐1.png); background-size:400px 300px; text-align:center; opacity:0;}
+            
+            h2{max-width: 40%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%;font-family: 'East Sea Dokdo', cursive; font-size: 1.5rem; text-align: center; color:white;}
+            a{max-width: 40%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%;font-family: 'East Sea Dokdo', cursive; font-size: 1.5rem; text-decoration:none; text-align: center; color:rgba(220,220,150,0.85);}
+            .name2 h1{max-width: 80%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%;font-family: 'East Sea Dokdo', cursive; font-size: 6rem; text-align: center; color:white; line-height:90%;}
+            .scene h3 {display: inline; max-width: 40%; position: absolute; left:50%; transform: translateX(-50%); top:10%;font-family: 'Gugi', cursive; font-size: 6rem; text-align: center; color: white;}
+            }
+            
+        @media all and (min-width:1025px){
+            .menuOpen{position:fixed;z-index:5;top:5%;right:20px;width:100px;height:100px; background: url("./image/먹물효과.png"); background-size: cover;}
+            .menuOpen a:hover{color:white; cursor:pointer;}
+            .header{position:fixed; z-index:3;top:0;right:0;width:170px;height:100vh;}
             .header .nav{position: absolute; top:20%; width:100%;}
             .header .menu:hover{opacity: 1; background-color: rgb(35,35,35); border-radius: 1rem;}
             .header ul li.n{width:100px; z-index: 3;height:100px; position:relative; left:50px; background:url("./image/먹물효과.png"); background-size:100px 100px ;margin-bottom:10px;}
@@ -36,10 +93,20 @@
             .scene.one .background{content:"";position:absolute; top:0px;left:0px;right:0px;bottom:0px; background:url("./image/main.jpg"); background-size:cover; background-attachment: fixed;}
             
             .scene .posPoint{position: absolute; top: 5%; left: 55%; width: 10px; height: 10px;}
-            .scene .posPoint .i1{position:absolute; width:400px; opacity:0;}
-            .scene .posPoint .i2{position:absolute; top: 300px; left:-100px; width:350px; opacity:0;}
-            .scene .posPoint .i3{position: absolute; top:280px; left: 200px; width:320px; opacity:0;}
-            .scene .posPoint .i4{position:absolute; top: 160px; left: -50px; width:300px; opacity:0;}
+            .scene .posPoint div{position:absolute; width:160px; height:160px; background-color: rgba(36,57,62,0.8);}
+            .scene .posPoint div img{position:absolute; left:5px; top:5px; width:150px; height:150px;}
+            .scene .posPoint .i1{top: 0px; left:0px;}
+            .scene .posPoint .i2{top: 0px; left: 170px;}
+            .scene .posPoint .i3{top: 0px; left: 340px;}
+            .scene .posPoint .i4{top: 170px; left: 0px;}
+            .scene .posPoint .i5{top: 170px; left: 170px;}
+            .scene .posPoint .i6{top: 170px; left: 340px;}
+            .scene .posPoint .i7{top: 340px; left: 0px;}
+            .scene .posPoint .i8{top: 340px; left: 170px;}
+            .scene .posPoint .i9{top: 340px; left: 340px;}
+            .scene .posPoint .i10{top: 510px; left: 0px;}
+            .scene .posPoint .i11{top: 510px; left: 170px;}
+            .scene .posPoint .i12{top: 510px; left: 340px;}
 
             .scene.two .background{content:"";position:absolute;top:0px;left:0px;right:0px;bottom:0px; background:url("./image/main.jpg"); background-size:cover;background-attachment: fixed;}
             .scene.two .content{display:none; position:absolute; height: 100vh; width: 100%;}
@@ -68,6 +135,7 @@
             a{max-width: 40%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%;font-family: 'East Sea Dokdo', cursive; font-size: 1.5rem; text-decoration:none; text-align: center; color:rgba(220,220,150,0.85);}
             .name2 h1{max-width: 80%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%;font-family: 'East Sea Dokdo', cursive; font-size: 6rem; text-align: center; color:white; line-height:90%;}
             .scene h3 {display: inline; max-width: 40%; position: absolute; left:50%; transform: translateX(-50%); top:10%;font-family: 'Gugi', cursive; font-size: 6rem; text-align: center; color: white;}
+        }
         </style>
     </head>
     <body>
@@ -102,10 +170,18 @@
                 <div class="subName"><h2>활동 1</h2></div>
                 <div class="name2"><h1 style="font-size: 8rem">서 예</h1></div>
                 <div class="posPoint">
-                    <img class="i1" src="./image/서예1.jpg">
-                    <img class="i2" src="./image/서예5.jpg">
-                    <img class="i3" src="./image/서예3.jpg">                        
-                    <img class="i4" src="./image/서예4.jpg">
+                    <div class="i1"><img src="./image/서예1.jpg"></div>
+                    <div class="i2"><img src="./image/서예2.jpg"></div>
+                    <div class="i3"><img src="./image/서예3.jpg"></div>
+                    <div class="i4"><img src="./image/서예4.jpg"></div>
+                    <div class="i5"><img src="./image/서예5.jpg"></div>
+                    <div class="i6"><img src="./image/서예6.jpg"></div>
+                    <div class="i7"><img src="./image/서예7.jpg"></div>
+                    <div class="i8"><img src="./image/서예8.jpg"></div>
+                    <div class="i9"><img src="./image/서예9.jpg"></div>
+                    <div class="i10"><img src="./image/서예10.jpg"></div>
+                    <div class="i11"><img src="./image/서예11.jpg"></div>
+                    <div class="i12"><img src="./image/서예12.jpg"></div>
                 </div>
             </div>
         </section>
@@ -113,12 +189,20 @@
             <div class="content">
                 <div class="background"></div>
                 <div class="subName"><h2>활동 2</h2></div>
-                <div class="name2"><h1>Calligraphy<br>Stamping</h1></div>
+                <div class="name2"><h1>Calligraphy</h1></div>
                 <div class="posPoint">
-                    <img class="i1" src="./image/캘리1.jpg">
-                    <img class="i2" src="./image/캘리2.jpg">
-                    <img class="i3" src="./image/도장1.jpg">
-                    <img class="i4" src="./image/캘리3.jpg">
+                    <div class="i1"><img src="./image/캘리1.jpg"></div>
+                    <div class="i2"><img src="./image/캘리2.jpg"></div>
+                    <div class="i3"><img src="./image/캘리3.jpg"></div>
+                    <div class="i4"><img src="./image/캘리4.jpg"></div>
+                    <div class="i5"><img src="./image/캘리5.jpg"></div>
+                    <div class="i6"><img src="./image/캘리6.jpg"></div>
+                    <div class="i7"><img src="./image/캘리7.jpg"></div>
+                    <div class="i8"><img src="./image/캘리8.jpg"></div>
+                    <div class="i9"><img src="./image/캘리9.jpg"></div>
+                    <div class="i10"><img src="./image/캘리10.jpg"></div>
+                    <div class="i11"><img src="./image/캘리11.jpg"></div>
+                    <div class="i12"><img src="./image/캘리12.jpg"></div>
                 </div>
             </div>
         </section>
@@ -155,7 +239,6 @@
                 <div class="scrollImg">
                     <div class="slide">
                         <div class="left"><div class="arrow"></div></div>
-                        <img src="./image/c0.jpg">
                         <img src="./image/c1.jpg">
                         <img src="./image/c2.jpg">
                         <img src="./image/c3.jpg">
@@ -213,55 +296,35 @@
                         menuOp=true;
                     }
                 })
+                $(".slide .left").click(function(){ //슬라이드 왼쪽 클릭
+                    $slideImg = $(this).parent().children("img");
+                        console.log(Number($($slideImg).last().css('left').replace('px',''))+Number($($slideImg).last().css('width').replace('px','')));
+                        console.log('너비 : ', $(window).width());
+                        $slideImg.each(function(){
+                            if($(window).width()>1000){
+                                $(this).animate({"left": $(this).position().left+500},1000);
+                            }
+                            else{
+                                $(this).animate({"left": $(this).position().left+566},500);
+                            }
 
-                $(".scene.three .slide .left").click(function(){ //슬라이드 왼쪽 클릭
-                    $slideImg = $(this).parent().children("img");
-                    if (click3 > 0){
-                        click3-=1;
-                        $slideImg.each(function(){
-                            $(this).animate({"left": $(this).position().left+400},1000)
                         });
-                    }
-                })
-                $(".scene.three .slide .right").click(function(){ //슬라이드 오른쪽 클릭
+                    })
+                $(".slide .right").click(function(){ //슬라이드 오른쪽 클릭
                     $slideImg = $(this).parent().children("img");
-                    if (click3 < 7) {
-                        click3+=1;
+                    if ($(window).width() < Number($($slideImg).last().css('left').replace('px',''))+Number($($slideImg).last().css('width').replace('px',''))) {
                         $slideImg.each(function(){
-                            $(this).animate({"left": $(this).position().left-400},1000)
-                        });
-                    }
-                })
-                $(".scene.three .slide .left").click(function(){ //슬라이드 왼쪽 클릭
-                    $slideImg = $(this).parent().children("img");
-                    if (click3 > 0){
-                        click3-=1;
-                        $slideImg.each(function(){
-                            $(this).animate({"left": $(this).position().left+400},1000)
+                            if($(window).width()>1000){
+                                $(this).animate({"left": $(this).position().left-500},1000);
+                            }
+                            else {
+                                $(this).animate({"left": $(this).position().left-566},500);
+                            }
                         });
                     }
                 })
 
-                $(".scene.four .slide .right").click(function(){ //슬라이드 오른쪽 클릭
-                    $slideImg = $(this).parent().children("img");
-                    if (click4 < 3) {
-                        click4+=1;
-                        $slideImg.each(function(){
-                            $(this).animate({"left": $(this).position().left-400},1000)
-                        });
-                    }
-                })
-                $(".scene.four .slide .left").click(function(){ //슬라이드 왼쪽 클릭
-                    $slideImg = $(this).parent().children("img");
-                    if (click4 > 0){
-                        click4-=1;
-                        $slideImg.each(function(){
-                            $(this).animate({"left": $(this).position().left+400},1000)
-                        });
-                    }
-                })
-            
-                $(window).scroll(function(){
+                $(window).scroll(function(){    //scroll 이벤트
                     winHeight = $(window).height();
                     scrollTop = $(window).scrollTop();
                     if(scrollTop < $(".scene.one").offset().top){ // 제목 타이틀 구간
@@ -285,18 +348,14 @@
                         if(scrollTop<cntTop+ToptoEnd*0.85){
                             $(".scene.one .subName").css({opacity:opacCal(scrollTop, cntTop, cntTop+ToptoEnd*0.1)});
                             $(".scene.one .name2").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.1, cntTop+ToptoEnd*0.3)});
-                            $(".scene.one .i1").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.3, cntTop+ToptoEnd*0.5)});
-                            $(".scene.one .i2").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.5, cntTop+ToptoEnd*0.6)});
-                            $(".scene.one .i3").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.6, cntTop+ToptoEnd*0.7)});
-                            $(".scene.one .i4").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.7, cntTop+ToptoEnd*0.8)});
+                            for (var i=0; i<12; i++){
+                            $(".scene.one .posPoint").children("div").eq(i).css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*(0.4+0.03*i), cntTop+ToptoEnd*(0.4+0.03*(i+1)))});
+                        }
                         }
                         else {
                             $(".scene.one .subName").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.9, cntEnd))});
                             $(".scene.one .name2").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.9, cntEnd))});
-                            $(".scene.one .i1").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.9, cntEnd))});
-                            $(".scene.one .i2").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.9, cntEnd))});
-                            $(".scene.one .i3").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.9, cntEnd))});
-                            $(".scene.one .i4").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.9, cntEnd))});
+                            $(".scene.one .posPoint").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.9, cntEnd))});
                         }
                     }
                     else if ($(".scene.two").offset().top < scrollTop && scrollTop < $(".scene.three").offset().top){ // 두번째 콘텐츠 구간
@@ -309,10 +368,9 @@
                         ToptoEnd = cntEnd-cntTop;
                         $(".scene.two .subName").css({opacity:opacCal(scrollTop, cntTop, cntTop+ToptoEnd*0.1)});
                         $(".scene.two .name2").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.1, cntTop+ToptoEnd*0.3)});
-                        $(".scene.two .i1").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.4, cntTop+ToptoEnd*0.5)});
-                        $(".scene.two .i2").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.5, cntTop+ToptoEnd*0.6)});
-                        $(".scene.two .i3").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.6, cntTop+ToptoEnd*0.7)});
-                        $(".scene.two .i4").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.7, cntTop+ToptoEnd*0.8)});
+                        for (var i=0; i<12; i++){
+                            $(".scene.two .posPoint").children("div").eq(i).css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*(0.4+0.03*i), cntTop+ToptoEnd*(0.4+0.03*(i+1)))});
+                        }
                         $(".scene.two").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.9, cntEnd))});
                     }
                     else if ($(".scene.three").offset().top < scrollTop && scrollTop < $(".scene.four").offset().top){ //세번째
@@ -340,12 +398,13 @@
                     }
                 })
             }
-            var start = function(){
+            var start = function(){     //초기 설정
                 $(".title .name").fadeIn(3000);
                 $(".title .sub").delay(1000).fadeIn(2000);
                 $(".title .background").fadeIn(1000);
                 slideImg($(".scene.three .slide img"));
                 slideImg($(".scene.four .slide img"));
+                $(".scene .posPoint div").height($(".scene .posPoint div").width());
             }
             var opacCal = function(scrolltop, start, end){ //투명도 계산
                 var value = (scrolltop - start) / (end - start);
@@ -366,24 +425,21 @@
                 $content.fadeIn(0);
             }
             var slideImg = function($slideImg){
-                $slideImg.each(function(){   // 슬라이드 이미지 간격 5로 배치 $slideImg .slide img
-                    $(this).css("left",bannerLeft);
-                    bannerLeft += $(this).width()+5;
-                });
-                $slideImg.parent().parent().width(bannerLeft+500);
-                bannerLeft=0;
-            }
-            var slide = function($slideImg, click, left, type){  //type은 silde 길이별 지정 횟수  three = 8, four = 5
-                $slideImg = $(this).parent().children("img");
-                if (left=true && click > 0){
-                    $slideImg.each(function(){
-                        $(this).animate({"left": $(this).position().left+400},1000)
+                if($(window).width()>1000){
+                    $slideImg.each(function(){   // 슬라이드 이미지 간격 5로 배치 $slideImg .slide img
+                        $(this).css("left",bannerLeft);
+                        bannerLeft += $(this).width()+5;
                     });
+                    $slideImg.parent().parent().width(bannerLeft+500);
+                    bannerLeft=0;
                 }
-                else if (left==false && click < type){
-                    $slideImg.each(function(){
-                        $(this).animate({"left": $(this).position().left-400},1000)
+                else{
+                    bannerLeft=212;
+                    $slideImg.each(function(){   // 슬라이드 이미지 간격 5로 배치 $slideImg .slide img
+                        $(this).css("left",bannerLeft);
+                        bannerLeft += $(this).width()+5;
                     });
+                    $slideImg.parent().parent().width(bannerLeft+500);
                 }
             }
             var moving = function(index){

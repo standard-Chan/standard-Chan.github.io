@@ -251,6 +251,12 @@
             }
             var initEvent = function(){
                 start();
+                window.addEventListener('load', function() {
+                  // body의 height를 살짝 늘리는 코드
+                document.body.style.height = (document.documentElement.clientHeight + 5) + 'px';
+                // scroll를 제어 하는 코드
+                setTimeout(scrollTo, 0, 0, 1);
+                }, false);
 
 
                 $(window).resize(function(){
@@ -321,6 +327,8 @@
                     else if ($(".scene.one").offset().top < scrollTop && scrollTop < $(".scene.two").offset().top){ // 첫번째 콘텐츠 구간
                         noneFixed($(".title .content"));
                         noneFixed($(".scene.two .content"));
+                        noneFixed($(".scene.three .content"));
+                        noneFixed($(".scene.four .content"));
                         fixed($(".scene.one .content"));
                         cntTop = $(".scene.one").offset().top;
                         cntEnd = $(".scene.two").offset().top;
@@ -342,6 +350,7 @@
                         noneFixed($(".title .content"));
                         noneFixed($(".scene.one .content"));
                         noneFixed($(".scene.three .content"));
+                        noneFixed($(".scene.four .content"));
                         fixed($(".scene.two .content"));
                         cntTop = $(".scene.two").offset().top;
                         cntEnd = $(".scene.three").offset().top;
@@ -355,6 +364,7 @@
                     }
                     else if ($(".scene.three").offset().top < scrollTop && scrollTop < $(".scene.four").offset().top){ //세번째
                         noneFixed($(".title .content"));
+                        noneFixed($(".scene.one .content"));
                         noneFixed($(".scene.two .content"));
                         noneFixed($(".scene.four .content"));
                         fixed($(".scene.three .content"));
@@ -366,7 +376,8 @@
                         $(".scene.three .content .scrollImg").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.5, cntTop+ToptoEnd*0.7)});
                     }
                     else if ($(".scene.four").offset().top < scrollTop){ //마지막
-                        noneFixed($(".title .content"));
+                        noneFixed($(".scene.one .content"));
+                        noneFixed($(".scene.two .content"));
                         noneFixed($(".scene.three .content"));
                         fixed($(".scene.four .content"));
                         cntTop = $(".scene.four").offset().top;
@@ -385,9 +396,6 @@
                 slideImg($(".scene.three .slide img"));
                 slideImg($(".scene.four .slide img"));
                 $(".scene .posPoint div").height($(".scene .posPoint div").width());
-                window.addEventListener("load", function(){    
-	                setTimeout(scrollTo, 0, 0, 1); 
-                    }, false);
             }
             var opacCal = function(scrolltop, start, end){ //투명도 계산
                 var value = (scrolltop - start) / (end - start);

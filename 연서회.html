@@ -385,6 +385,9 @@
                 slideImg($(".scene.three .slide img"));
                 slideImg($(".scene.four .slide img"));
                 $(".scene .posPoint div").height($(".scene .posPoint div").width());
+                window.addEventListener("load", function(){    
+	                setTimeout(scrollTo, 0, 0, 1); 
+                    }, false);
             }
             var opacCal = function(scrolltop, start, end){ //투명도 계산
                 var value = (scrolltop - start) / (end - start);

@@ -331,6 +331,10 @@
                         $(".title .sub").css({opacity:1-opacCal(scrollTop, cntEnd*0.5, cntEnd)});    
                     }
                     else if ($(".scene.one").offset().top < scrollTop && scrollTop < $(".scene.two").offset().top){ // 첫번째 콘텐츠 구간
+                        if (menuOp){    // 네비게이션 제거
+                        $(".header").fadeOut("slow");
+                        menuOp=false;
+                    }
                         noneFixed($(".title .content"));
                         noneFixed($(".scene.two .content"));
                         noneFixed($(".scene.three .content"));
@@ -353,6 +357,10 @@
                         }
                     }
                     else if ($(".scene.two").offset().top < scrollTop && scrollTop < $(".scene.three").offset().top){ // 두번째 콘텐츠 구간
+                        if (menuOp){    // 네비게이션 제거
+                        $(".header").fadeOut("slow");
+                        menuOp=false;
+                    }
                         noneFixed($(".title .content"));
                         noneFixed($(".scene.one .content"));
                         noneFixed($(".scene.three .content"));

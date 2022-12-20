@@ -284,8 +284,6 @@
                 })
                 $(".slide .left").click(function(){ //슬라이드 왼쪽 클릭
                     $slideImg = $(this).parent().children("img");
-                        console.log(Number($($slideImg).last().css('left').replace('px',''))+Number($($slideImg).last().css('width').replace('px','')));
-                        console.log('너비 : ', $(window).width());
                         $slideImg.each(function(){
                             if($(window).width()>1000){
                                 $(this).animate({"left": $(this).position().left+500},1000);
@@ -425,20 +423,16 @@
             }
             var slideImg = function($slideImg){ // 슬라이드 이미지 배치 함수
                 if($(window).width()>1025){
-                    $slideImg.each(function(){   // 슬라이드 이미지 간격 5로 배치 $slideImg .slide img
-                        $(this).css("left",bannerLeft);
-                        bannerLeft += $(this).width()+5;
-                    });
-                    $slideImg.parent().parent().width(bannerLeft+500);
                     bannerLeft=0;
+                    for (var i=0; i<$slideImg.last().index(); i++){
+                            $slideImg.eq(i).css({left: bannerLeft+(233+5)*i}); // 슬라이드 이미지 간격 5로 배치 $slideImg .slide img
+                        }
                 }
                 else{
                     bannerLeft=212;
-                    $slideImg.each(function(){   // 슬라이드 이미지 간격 5로 배치 $slideImg .slide img
-                        for (var i=0; i<$slideImg.last().index(); i++){
+                    for (var i=0; i<$slideImg.last().index(); i++){
                             $slideImg.eq(i).css({left: bannerLeft+(566+15)*i});
-                        }
-                    });
+                    }
                 }
             }
             var moving = function(index){

@@ -1,0 +1,123 @@
+            @media all{
+                html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            	margin: 0;
+            	padding: 0;
+	            border: 0;
+	            font-size: 100%;
+	            font: inherit;
+	            vertical-align: baseline;
+            }
+                /* HTML5 display-role reset for older browsers */
+            article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	            display: block;
+                }
+                body {line-height: 1;}
+            ol, ul {list-style: none;}
+            blockquote:before, blockquote:after, q:before, q:after {
+	            content: '';    
+	            content: none;
+            }
+            table {border-collapse: collapse; border-spacing: 0;}
+            .scene {display:block; position:relative; height:600vh; overflow: hidden; background-attachment: fixed;}
+            .scene.one .content{position: absolute; height: 100vh; width: 100%;}
+            .scene.one .background{content:"";position:absolute; top:0px;left:0px;right:0px;bottom:0px; background:url("../image/main.jpg"); background-size:cover; background-attachment: fixed;}
+            
+            h2{max-width: 40%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%;font-family: 'East Sea Dokdo', cursive; font-size: 1.5rem; text-align: center; color:white;}
+            a{max-width: 40%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%;font-family: 'East Sea Dokdo', cursive; font-size: 1.5rem; text-decoration:none; text-align: center; color:rgba(220,220,150,0.85);}
+            .name2 h1{max-width: 80%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%;font-family: 'East Sea Dokdo', cursive; font-size: 6rem; text-align: center; color:white; line-height:90%;}
+            .scene h3 {display: inline; max-width: 40%; position: absolute; left:50%; transform: translateX(-50%); top:10%;font-family: 'Gugi', cursive; font-size: 6rem; text-align: center; color: white;}
+            }
+            
+            @media all and (max-width:1024px){
+            a{font-size: 2rem;}
+            .menuOpen{position:fixed;z-index:5;top:5%;right:20px;width:150px;height:150px; background: url("../image/먹물효과.png"); background-size: cover;}
+            .menuOpen a:hover{color:white; cursor:pointer;}
+            .header{position:fixed; z-index:3;top:0;right:0;width:170px;height:100vh;}
+            .header .nav{position: absolute; top:20%; width:100%;}
+            .header .menu:hover{opacity: 1; background-color: rgb(35,35,35); border-radius: 1rem;}
+            .header ul li.n{width:150px; z-index: 3;height:150px; position:relative; left:0px; background:url("../image/먹물효과.png"); background-size:150px 150px ;margin-bottom:10px;}
+            .header ul li.n a:hover{font-weight: bold;color:white;}
+
+            .title {height:200vh;}
+            .title .content {position: fixed; height: 100vh; width: 100%;}
+            .title .background{content:""; display:none; position:absolute;top:0px;left:0px;right:0px;bottom:0px; background: url("../image/main.jpg");background-size: cover; background-attachment: fixed;}
+            .title .name{display:none; width:500px; height: 400px; position:absolute; top:25%;left:50%; transform: translateX(-50%) translateY(-50%);background-image: url("../image/먹번짐.png"); background-size:500px 400px; text-align:center;}
+            .title .name h1{max-width: 60%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%; font-family: 'Gugi', cursive; font-size: 4rem; text-align: center; color:white;}
+            .title .sub{display:none; width:300px; height: 230px; position:absolute; top:65%; left:45%; transform: translateY(-50%); font-size: 1rem;}
+            .title .sub .img{position:absolute; width:80px; height:70px; right: 0px; background-image: url("../image/먹물효과.png"); background-size: 80px 70px; font-family: 'Gugi', cursive; text-align: center; line-height: 65px; color:white}
+            .title .sub .text{position:absolute; left:30px; font-size: 2rem; font-family: 'East Sea Dokdo', cursive; color:white; background-color: black;}
+
+            .scene .posPoint{position: absolute; display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; top: 50%; left:5%; column-gap: 2%; row-gap: 1%;width:90%; height: 40%;}
+            .scene .posPoint div{position:relative; width:100%; height:100px; background-color: rgba(36,57,62,0.8);}
+            .scene .posPoint div img{position:absolute; left:50%; top:50%; transform: translateX(-50%) translateY(-50%); width:90%; height:90%;}
+
+            .scene.two .background{content:"";position:absolute;top:0px;left:0px;right:0px;bottom:0px; background:url("../image/main.jpg"); background-size:cover;background-attachment: fixed;}
+            .scene.two .content{display:none; position:absolute; height: 100vh; width: 100%;}
+
+            .scene.three .content{position: absolute; top:0px; left:0px; height: 100vh; width: 100%;}
+            .scene.three .background{content:""; position: absolute; top: 0px; left :0px;right:0px;bottom:0px;background:url("../image/배경3m.jpg");background-size:cover; background-attachment: fixed;opacity: 1;}
+            .scene.three .scrollImg{position: absolute; top: 60%; width:6000px; height:900px; transform:translateY(-50%); background-color: rgba(255,255,255,0.5);opacity: 0;}
+            .scene.three .scrollImg img{position:absolute; height:850px;}
+
+            .scene.four .content{position: absolute; top:0px; left:0px; height: 100vh; width: 100%;}
+            .scene.four .background{content:"";position:absolute;top:0px;left:0px;right:0px;bottom:0px;background:url("../image/배경4m.jpg");background-size: cover; background-attachment: fixed;opacity: 1;}
+            .scene.four .scrollImg{position: absolute; top: 60%; width:6000px; height:900px; transform:translateY(-50%); background-color: rgba(255,255,255,0.5); opacity: 0;}
+            .scene.four .scrollImg img{position:absolute; height:850px;}
+
+            .scrollImg .slide{position:absolute; top:25px; left:0; width:99vw; height:400px;}
+            .scrollImg .slide .left{position: absolute; top:0; left:0; height: 850px; width: 50px; background-color: rgb(50,50,50); opacity: 0.5; z-index: 1;}
+            .scrollImg .slide .right{position: absolute; top:0; right:0; height: 850px; width: 50px; background-color: rgb(50,50,50); opacity: 0.5;}
+            .scrollImg .slide .arrow{position:absolute; width:40px; height:50px; top:50%; right:5px; transform:translateY(-50%); background:url("../image/화살표.png"); background-size: 40px 50px;}
+            .scrollImg .slide .left .arrow{transform: translateY(-50%) scaleX(-1); left:5px;}
+            .scrollImg .slide div:hover{opacity: 1;}
+
+            .content .subName{width:350px; height: 100px; position:absolute; top:10%;left:50%; transform: translateY(-50%);transform: translateX(-50%);background-image: url("../image/갈필1.png"); background-size:350px 100px; text-align:center; opacity:0;}
+            .content .name2{width:400px; height: 300px; position:absolute; top:20%;left:50%; transform: translateY(-50%);transform: translateX(-50%);background-image: url("../image/먹번짐1.png"); background-size:400px 300px; text-align:center; opacity:0;}
+            }
+            
+        @media all and (min-width:1025px){
+            .menuOpen{position:fixed;z-index:5;top:5%;right:20px;width:100px;height:100px; background: url("../image/먹물효과.png"); background-size: cover;}
+            .menuOpen a:hover{color:white; cursor:pointer;}
+            .header{position:fixed; z-index:3;top:0;right:0;width:170px;height:100vh;}
+            .header .nav{position: absolute; top:20%; width:100%;}
+            .header .menu:hover{opacity: 1; background-color: rgb(35,35,35); border-radius: 1rem;}
+            .header ul li.n{width:100px; z-index: 3;height:100px; position:relative; left:50px; background:url("../image/먹물효과.png"); background-size:100px 100px ;margin-bottom:10px;}
+            .header ul li.n a:hover{font-weight: bold;color:white;}
+
+            .title {height:200vh;}
+            .title .content {position: fixed; height: 100vh; width: 100%;}
+            .title .background{content:""; display:none; position:absolute;top:0px;left:0px;right:0px;bottom:0px; background: url("../image/main.jpg");background-size: cover; background-attachment: fixed;}
+            .title .name{display:none; width:400px; height: 300px; position:absolute; top:25%;left:50%; transform: translateY(-50%);background-image: url("../image/먹번짐.png"); background-size:400px 300px; text-align:center;}
+            .title .name h1{max-width: 60%; position:absolute; left:50%; transform:translateX(-50%) translateY(-50%); top:50%; font-family: 'Gugi', cursive; font-size: 4rem; text-align: center; color:white;}
+            .title .sub{display:none; width:300px; height: 230px; position:absolute; top:65%; left:50%; transform: translateY(-50%); font-size: 1rem;}
+            .title .sub .img{position:absolute; width:80px; height:70px; right: 0px; background-image: url("../image/먹물효과.png"); background-size: 80px 70px; font-family: 'Gugi', cursive; text-align: center; line-height: 65px; color:white}
+            .title .sub .text{position:absolute; left:30px; font-size: 2rem; font-family: 'East Sea Dokdo', cursive;}
+
+            .scene .posPoint{position: absolute; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr 1fr; top: 5%; left:50%; column-gap: 2%; row-gap: 1%;width:30%; height: 90vh;}
+            .scene .posPoint div{position:relative; width:100%; height:100px; background-color: rgba(36,57,62,0.8);}
+            .scene.two .posPoint div{background-color: rgba(224,207,152, 0.5);}
+            .scene .posPoint div img{position:absolute; left:50%; top:50%; transform: translateX(-50%) translateY(-50%); width:90%; height:90%;}
+
+            .scene.two .background{content:"";position:absolute;top:0px;left:0px;right:0px;bottom:0px; background:url("../image/main.jpg"); background-size:cover;background-attachment: fixed;}
+            .scene.two .content{display:none; position:absolute; height: 100vh; width: 100%;}
+
+            .scene.three .content{position: absolute; top:0px; left:0px; height: 100vh; width: 100%;}
+            .scene.three .background{content:""; position: absolute; top: 0px; left :0px;right:0px;bottom:0px;background:url("../image/배경3.jpg");background-size:cover; background-attachment: fixed;opacity: 1;}
+            .scene.three .scrollImg{position: absolute; top: 60%; width:6000px; height:400px; transform:translateY(-50%); background-color: rgba(255,255,255,0.5);opacity: 0;}
+            .scene.three .scrollImg img{position:absolute; height:350px;}
+
+            .scene.four .content{position: absolute; top:0px; left:0px; height: 100vh; width: 100%;}
+            .scene.four .background{content:"";position:absolute;top:0px;left:0px;right:0px;bottom:0px;background:url("../image/배경4.jpg");background-size: cover; background-attachment: fixed;opacity: 1;}
+            .scene.four .scrollImg{position: absolute; top: 60%; width:6000px; height:400px; transform:translateY(-50%); background-color: rgba(255,255,255,0.5); opacity: 0;}
+            .scene.four .scrollImg img{position:absolute; height:350px;}
+
+            .scrollImg .slide{position:absolute; top:25px; left:0; width:99vw; height:400px;}
+            .scrollImg .slide .left{position: absolute; top:0; left:0; height: 350px; width: 50px; background-color: rgb(50,50,50); opacity: 0.5; z-index: 1;}
+            .scrollImg .slide .right{position: absolute; top:0; right:0; height: 350px; width: 50px; background-color: rgb(50,50,50); opacity: 0.5;}
+            .scrollImg .slide .arrow{position:absolute; width:40px; height:50px; top:50%; right:5px; transform:translateY(-50%); background:url("../image/화살표.png"); background-size: 40px 50px;}
+            .scrollImg .slide .left .arrow{transform: translateY(-50%) scaleX(-1); left:5px;}
+            .scrollImg .slide div:hover{opacity: 1;}
+
+            .content .subName{width:350px; height: 100px; position:absolute; top:10%;left:25%; transform: translateY(-50%);transform: translateX(-50%);background-image: url("../image/갈필1.png"); background-size:350px 100px; text-align:center; opacity:0;}
+            .content .name2{width:400px; height: 300px; position:absolute; top:30%;left:25%; transform: translateY(-50%);transform: translateX(-50%);background-image: url("../image/먹번짐1.png"); background-size:400px 300px; text-align:center; opacity:0;}
+        }

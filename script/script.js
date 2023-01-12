@@ -30,7 +30,7 @@
             slideImg($(".scene.four .slide img"));
             if($(window).width()<1025){ // 모바일
                 $(".exImage img").width($(window).width()*0.8);
-                $(".scene.five").height($(".content .box").height()+200);
+                $(".scene.five").height($(".content .box").height()+500);
             }
             else if($(window).width()>1025){ // PC
                 $(".exImage img").width($(".content .box").width()*0.33);
@@ -202,7 +202,7 @@
         $(".scene .posPoint div").height($(".scene .posPoint div").width());
         if($(window).width()<1025){ // 모바일
             $(".exImage img").width($(window).width()*0.8);
-            $(".scene.five").height($(".content .box").height()+200);
+            $(".scene.five").height($(".content .box").height()+500);
         }
         else if($(window).width()>1025){ // PC
             $(".exImage img").width($(".content .box").width()*0.33);

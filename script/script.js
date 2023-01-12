@@ -28,6 +28,14 @@
             $(".slide").width($(window).width());
             slideImg($(".scene.three .slide img"));
             slideImg($(".scene.four .slide img"));
+            if($(window).width()<1025){ // 모바일
+                $(".exImage img").width($(window).width()*0.8);
+                $(".scene.five").height($(".content .box").height()+200);
+            }
+            else if($(window).width()>1025){ // PC
+                $(".exImage img").width($(".content .box").width()*0.33);
+                $(".scene.five").height($(".content .box").height()+1000);
+            }
         })
 
         $nav.on("click", function(){                // nav 클릭 이벤트
@@ -132,13 +140,13 @@
                 for (var i=0; i<$(".scene.two .posPoint").children("div").last().index()+1; i++){
                     $(".scene.two .posPoint").children("div").eq(i).css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*(0.3+0.045*i), cntTop+ToptoEnd*(0.3+0.045*(i+1)))});
                 }
-                $(".scene.two").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.9, cntEnd))});
+                $(".scene.two").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.9, cntEnd))}); // fade OUT
             }
             else if ($(".scene.three").offset().top < scrollTop && scrollTop < $(".scene.four").offset().top){ //세번째
                 if (menuOp){    // 네비게이션 제거
                 $(".header").fadeOut("slow");
                 menuOp=false;
-            }
+                }
                 noneFixed($(".title .content"));
                 noneFixed($(".scene.one .content"));
                 noneFixed($(".scene.two .content"));
@@ -149,23 +157,39 @@
                 ToptoEnd = cntEnd-cntTop;
                 $(".scene.three .content").css({opacity:opacCal(scrollTop, cntTop, cntTop+ToptoEnd*0.2)});
                 $(".scene.three .content h3").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.2, cntTop+ToptoEnd*0.3)});
-                $(".scene.three .content .scrollImg").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.5, cntTop+ToptoEnd*0.7)});
+                $(".scene.three .content .scrollImg").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.4, cntTop+ToptoEnd*0.6)});
             }
-            else if ($(".scene.four").offset().top < scrollTop){ //마지막
+            else if ($(".scene.four").offset().top < scrollTop && scrollTop < $(".scene.five").offset().top){ // 네번째
                 if (menuOp){    // 네비게이션 제거
                 $(".header").fadeOut("slow");
                 menuOp=false;
-            }
+                }
+                noneFixed($(".title .content"));
                 noneFixed($(".scene.one .content"));
                 noneFixed($(".scene.two .content"));
                 noneFixed($(".scene.three .content"));
                 fixed($(".scene.four .content"));
                 cntTop = $(".scene.four").offset().top;
-                cntEnd = cntTop + $(".scene.four").height();
+                cntEnd = $(".scene.five").offset().top;
                 ToptoEnd = cntEnd-cntTop;
                 $(".scene.four .content").css({opacity:opacCal(scrollTop, cntTop, cntTop+ToptoEnd*0.2)});
                 $(".scene.four .content h3").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.2, cntTop+ToptoEnd*0.3)});
-                $(".scene.four .content .scrollImg").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.5, cntTop+ToptoEnd*0.7)});
+                $(".scene.four .content .scrollImg").css({opacity:opacCal(scrollTop, cntTop+ToptoEnd*0.4, cntTop+ToptoEnd*0.6)});
+                $(".scene.four").css({opacity:(1-opacCal(scrollTop, cntTop+(cntEnd-cntTop)*0.8, cntEnd))});
+            }
+            else if ($(".scene.five").offset().top < scrollTop){ // 마지막
+                if (menuOp){    // 네비게이션 제거
+                $(".header").fadeOut("slow");
+                menuOp=false;
+                }
+                noneFixed($(".title .content"));
+                noneFixed($(".scene.one .content"));
+                noneFixed($(".scene.two .content"));
+                noneFixed($(".scene.three .content"));
+                noneFixed($(".scene.four .content"));
+                cntTop = $(".scene.five").offset().top;
+                cntEnd = cntTop + $(".scene.five").height();
+                ToptoEnd = cntEnd-cntTop;
             }
         })
     }
@@ -176,6 +200,14 @@
         slideImg($(".scene.three .slide img"));
         slideImg($(".scene.four .slide img"));
         $(".scene .posPoint div").height($(".scene .posPoint div").width());
+        if($(window).width()<1025){ // 모바일
+            $(".exImage img").width($(window).width()*0.8);
+            $(".scene.five").height($(".content .box").height()+200);
+        }
+        else if($(window).width()>1025){ // PC
+            $(".exImage img").width($(".content .box").width()*0.33);
+            $(".scene.five").height($(".content .box").height()+1000);
+        }
     }
     var opacCal = function(scrolltop, start, end){ //투명도 계산
         var value = (scrolltop - start) / (end - start);
@@ -211,7 +243,12 @@
     }
     var moving = function(index){
         moveSec = $("body").children("section").eq(index);
-        moveSecTop = moveSec.offset().top;
+        if (index==5){
+            moveSecTop = moveSec.offset().top - 50;
+        }
+        else {
+            moveSecTop = moveSec.offset().top;
+        }
         $("html ,body").scrollTop(moveSecTop);
         setInterval(0, 100);
         if(index==0){
@@ -231,5 +268,11 @@
             scrollTop: moveSecTop+$(".scene").height()*0.7
         }, 1000, function(){
         });
+        }
+        else if (index==5){
+            $("html ,body").stop().animate({
+                scrollTop: moveSecTop+90
+            }, 1000, function(){
+            });
         }
     };
